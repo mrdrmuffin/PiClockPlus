@@ -8,7 +8,7 @@ import io
 
 from PIL import Image, ImageTk
 
-appid = ''
+appid = '92ce933d50001c4176501088ed8e1d7c'
 
 
 class WeatherInfo:
@@ -88,18 +88,19 @@ def update_weather():
 
 root = Tk()
 root.geometry('480x320')
+root.config( bg='DeepSkyBlue4')
 # root.attributes('-fullscreen', True)
 
 time1 = ''
-clock = Label(root, font=('times', 20, 'bold'), bg='DeepSkyBlue4', fg='white')
+clock = Label(root, font=('times', 48, 'bold'), bg='DeepSkyBlue4', fg='white')
 clock.pack(fill=BOTH, expand=1)
 
 wi = WeatherInfo()
-weather = Label(root, text="Hello NYC! %s" % wi.temp)
-weather.pack()
+weather = Label(root, text="Hello NYC! %s" % wi.temp, font=('times', 20, 'bold'), bg='DeepSkyBlue4', fg='white')
+weather.pack(side=LEFT)
 
-weather_image = Label(root)
-weather_image.pack()
+weather_image = Label(root, bg='DeepSkyBlue4')
+weather_image.pack(side=RIGHT)
 
 # root.bind('<KeyPress>', onKeyPress)       #For example, bind the onKeyPress method (you must create it), and have some code
 # done when key is pressed
